@@ -74,7 +74,7 @@ public class LoginFragment extends Fragment {
 
         GoogleSignInOptions gsOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gsOptions);
+//        mGoogleSignInClient = GoogleSignIn.getClient(this, gsOptions);
 
         btnGoogleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
