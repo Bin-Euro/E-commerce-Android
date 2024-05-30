@@ -50,7 +50,7 @@
             android:backgroundTint="@color/secondary"
             android:text="Login"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="14dp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,SpUsage,TextSizeCheck" />
 
