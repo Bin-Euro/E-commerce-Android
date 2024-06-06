@@ -1,6 +1,8 @@
-package com.example.ecommerce.product;
+package com.example.ecommerce.product.model;
 
-public class SanPham {
+import java.io.Serializable;
+
+public class SanPham implements Serializable {
     public int id;
     public String tenSP;
     public int hinhSP;

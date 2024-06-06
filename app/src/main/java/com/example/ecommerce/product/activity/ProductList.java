@@ -1,9 +1,11 @@
-package com.example.ecommerce.product;
+package com.example.ecommerce.product.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
@@ -17,10 +19,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecommerce.R;
-import com.example.ecommerce.product.AdapterDS;
-import com.example.ecommerce.product.AdapterSP;
-import com.example.ecommerce.product.DanhSach;
-import com.example.ecommerce.product.SanPham;
+import com.example.ecommerce.product.adapter.AdapterDS;
+import com.example.ecommerce.product.adapter.AdapterSP;
+import com.example.ecommerce.product.checkConnection;
+import com.example.ecommerce.product.model.DanhSach;
+import com.example.ecommerce.product.model.SanPham;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -49,9 +52,57 @@ public class ProductList extends AppCompatActivity {
         if (checkConnection.haveNetworkConnection(getApplicationContext())){
             ActionBar();
             ActionViewFlipper();
+            CatchOnItemClickView();
         }else {
             checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng");
         }
+    }
+
+    private void CatchOnItemClickView() {
+        lvDanhSach.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                switch (i) {
+                    case 0:
+                        if(checkConnection.haveNetworkConnection(getApplicationContext())){
+                            Intent intent = new Intent(ProductList.this, ProductList.class);
+                            startActivity(intent);
+                        }else {
+                            checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
+                        }
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 1:
+                        if(checkConnection.haveNetworkConnection(getApplicationContext())){
+                            Intent intent = new Intent(ProductList.this, SanPhamActivity.class);
+//                            intent.putExtra("idDanhSach", arrayDanhSach.get(i).getId());
+                            startActivity(intent);
+                        }else {
+                            checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
+                        }
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 2:
+                        if(checkConnection.haveNetworkConnection(getApplicationContext())){
+                            Intent intent = new Intent(ProductList.this, ThongTinActivity.class);
+                            startActivity(intent);
+                        }else {
+                            checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
+                        }
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case 3:
+                        if(checkConnection.haveNetworkConnection(getApplicationContext())){
+                            Intent intent = new Intent(ProductList.this, ChatActivity.class);
+                            startActivity(intent);
+                        }else {
+                            checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
+                        }
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                }
+            }
+        });
     }
 
     private void ActionViewFlipper() {

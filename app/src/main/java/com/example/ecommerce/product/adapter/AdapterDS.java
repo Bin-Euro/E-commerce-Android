@@ -1,4 +1,4 @@
-package com.example.ecommerce.product;
+package com.example.ecommerce.product.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.ecommerce.R;
+import com.example.ecommerce.product.model.DanhSach;
 
 import java.util.ArrayList;
 
