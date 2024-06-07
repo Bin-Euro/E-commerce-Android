@@ -8,8 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ecommerce.R;
+
 import com.example.ecommerce.product.model.DanhSach;
+import com.example.ecommerce.R;
 
 import java.util.ArrayList;
 

@@ -18,17 +18,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ecommerce.R;
 import com.example.ecommerce.product.adapter.AdapterDS;
 import com.example.ecommerce.product.adapter.AdapterSP;
-import com.example.ecommerce.product.checkConnection;
 import com.example.ecommerce.product.model.DanhSach;
+import com.example.ecommerce.R;
 import com.example.ecommerce.product.model.SanPham;
+import com.example.ecommerce.product.checkConnection;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class ProductList extends AppCompatActivity {
+public class ProductListActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     ViewFlipper viewFlipper;
@@ -48,13 +48,12 @@ public class ProductList extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_product_list);
         Anhxa();
-
         if (checkConnection.haveNetworkConnection(getApplicationContext())){
             ActionBar();
             ActionViewFlipper();
             CatchOnItemClickView();
         }else {
-            checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng");
+            checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
         }
     }
 
@@ -65,7 +64,7 @@ public class ProductList extends AppCompatActivity {
                 switch (i) {
                     case 0:
                         if(checkConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(ProductList.this, ProductList.class);
+                            Intent intent = new Intent(ProductListActivity.this, ProductListActivity.class);
                             startActivity(intent);
                         }else {
                             checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
@@ -74,7 +73,7 @@ public class ProductList extends AppCompatActivity {
                         break;
                     case 1:
                         if(checkConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(ProductList.this, SanPhamActivity.class);
+                            Intent intent = new Intent(ProductListActivity.this, SanPhamActivity.class);
 //                            intent.putExtra("idDanhSach", arrayDanhSach.get(i).getId());
                             startActivity(intent);
                         }else {
@@ -84,7 +83,7 @@ public class ProductList extends AppCompatActivity {
                         break;
                     case 2:
                         if(checkConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(ProductList.this, ThongTinActivity.class);
+                            Intent intent = new Intent(ProductListActivity.this, ThongTinActivity.class);
                             startActivity(intent);
                         }else {
                             checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");
@@ -93,7 +92,7 @@ public class ProductList extends AppCompatActivity {
                         break;
                     case 3:
                         if(checkConnection.haveNetworkConnection(getApplicationContext())){
-                            Intent intent = new Intent(ProductList.this, ChatActivity.class);
+                            Intent intent = new Intent(ProductListActivity.this, ChatActivity.class);
                             startActivity(intent);
                         }else {
                             checkConnection.ShowToast_Short(getApplicationContext(), "Vui lòng kiểm tra lại kết nối mạng!");

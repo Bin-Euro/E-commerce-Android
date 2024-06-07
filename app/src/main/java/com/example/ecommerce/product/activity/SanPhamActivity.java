@@ -2,14 +2,20 @@ package com.example.ecommerce.product.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.example.ecommerce.R;
 import com.example.ecommerce.product.adapter.AdapterMK;
@@ -33,10 +39,10 @@ public class SanPhamActivity extends AppCompatActivity {
         Anhxa();
 
         if(checkConnection.haveNetworkConnection(getApplicationContext())){
-        ActionBar();
-        CatchOnItemListView();
+            ActionBar();
+            CatchOnItemListView();
 //        LoadmoreData();
-        //GetIDDanhSach();
+            //GetIDDanhSach();
         }else {
             checkConnection.ShowToast_Short(getApplicationContext(),"Vui lòng kiểm tra lại kết nối mạng!");
             finish();
@@ -120,8 +126,8 @@ public class SanPhamActivity extends AppCompatActivity {
         arrayMK.add(new SanPham(0,"Kính râm phân cực", R.drawable.kinhramphancuc, 350000, "Kính Ma Cà Rồng phân cực retro cho nam, thích hợp khi lái xe, du lịch, câu cá Kính Ma Cà Rồng retro\n" +
                 "Kính màu phân cực retro dành cho nữ, thích hợp cho việc chống nắng, đẹp mắt\n"));
         arrayMK.add(new SanPham(0,"Kính cận Hàn Quốc", R.drawable.kinhcan1, 200000, "Kính mắt có độ cận -1.0 đến -6.0 phong cách Hàn Quốc thời trang dành cho cả nam và nữ"));
-       adapterMK = new AdapterMK(getApplicationContext(),arrayMK);
-       lvMatKinh.setAdapter(adapterMK);
+        adapterMK = new AdapterMK(getApplicationContext(),arrayMK);
+        lvMatKinh.setAdapter(adapterMK);
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
         footerView = inflater.inflate(R.layout.loadmore_sanpham,null);
     }

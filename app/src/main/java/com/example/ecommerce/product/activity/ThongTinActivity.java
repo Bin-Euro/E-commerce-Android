@@ -8,7 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.chaythu.R;
+import com.example.ecommerce.R;
 
 public class ThongTinActivity extends AppCompatActivity {
 

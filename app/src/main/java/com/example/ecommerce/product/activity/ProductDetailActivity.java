@@ -8,11 +8,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import com.example.chaythu.R;
-import com.example.chaythu.model.SanPham;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import com.example.ecommerce.R;
+import com.example.ecommerce.product.model.SanPham;
 
 import java.text.DecimalFormat;
 
@@ -27,7 +30,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
         Anhxa();
-//        ActionBar();
+        ActionBar();
         GetInformation();
         CatchEventSpinner();
     }
@@ -60,7 +63,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private void ActionBar() {
         setSupportActionBar(tbDetail);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tbDetail.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
