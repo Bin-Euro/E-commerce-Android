@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.ecommerce.product.activity.ProductListActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -92,7 +94,7 @@ public class LoginFragment extends Fragment {
                 });
     }
     private void navigateToMainActivity() {
-        Intent intent = new Intent(getActivity(), HomeActivity.class);
+        Intent intent = new Intent(getActivity(), ProductListActivity.class);
         startActivity(intent);
         requireActivity().finish();
     }    private void showPhoneAuthFragment() {
