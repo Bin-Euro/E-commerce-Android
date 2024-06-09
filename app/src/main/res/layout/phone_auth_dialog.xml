@@ -1,0 +1,52 @@
+<!-- fragment_phone_auth.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Phone Number EditText -->
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/hintText" />
+
+    <!-- OTP EditText -->
+    <EditText
+        android:id="@+id/editTextOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="OTP"
+        android:inputType="number"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:textColorHint="@color/hintText"
+        android:visibility="gone" />
+
+    <!-- Send OTP Button -->
+    <Button
+        android:id="@+id/btnSendOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Send OTP"
+        android:textColor="@color/white"
+        android:background="@color/primary" />
+
+    <!-- Verify OTP Button -->
+    <Button
+        android:id="@+id/btnVerifyOtp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Verify OTP"
+        android:textColor="@color/white"
+        android:background="@color/primary"
+        android:visibility="gone" />
+
+</LinearLayout>

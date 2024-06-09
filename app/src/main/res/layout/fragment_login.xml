@@ -23,6 +23,7 @@
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:padding="10dp"
+            android:textColor="#FFFFFF"
             android:textColorHint="@color/hintText"
             tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,TextContrastCheck" />
 
@@ -37,6 +38,7 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="10dp"
+            android:textColor="#FFFFFF"
             android:textColorHint="@color/hintText"
             tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck,TextContrastCheck,VisualLintOverlap" />
 
@@ -98,6 +100,16 @@
             android:drawableLeft="@drawable/google_logo"
             android:text="Sign in by Google"
             android:textColor="@color/black"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btnPhone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@android:drawable/stat_sys_phone_call"
+            android:text="Sign in by Phone"
+            android:textColor="@color/white"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
     </LinearLayout>
